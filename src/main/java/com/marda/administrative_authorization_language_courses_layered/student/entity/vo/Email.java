@@ -1,7 +1,11 @@
 package com.marda.administrative_authorization_language_courses_layered.student.entity.vo;
 
+import com.marda.administrative_authorization_language_courses_layered.student.exception.StudentException;
+import jakarta.persistence.Embeddable;
+
+@Embeddable
 public class Email {
-    private final String value;
+    private String value;
 
     // OWASP Validation Regular Expression
     // https://www.baeldung.com/java-email-validation-regex
@@ -9,17 +13,21 @@ public class Email {
     private static final String EMAIL_REQUIRED = "Email required";
     private static final String EMAIL_NOT_VALID = "Email is not valid";
 
+    // Required for JPA
+    protected Email() {
+    }
+
     private Email(String value) {
         this.value = value;
     }
 
-    public static Email create(String value) throws DomainException {
+    public static Email create(String value) throws StudentException {
         if (value == null || value.isBlank()) {
-            throw new DomainException(EMAIL_REQUIRED);
+            throw new StudentException(EMAIL_REQUIRED);
         }
 
         if (!value.matches(REGEX)) {
-            throw new DomainException(EMAIL_NOT_VALID);
+            throw new StudentException(EMAIL_NOT_VALID);
         }
 
         return new Email(value);
@@ -34,7 +42,7 @@ public class Email {
     public static Email fromDb(String value) {
         try {
             return create(value);
-        } catch (DomainException e) {
+        } catch (StudentException e) {
             throw new IllegalStateException("Invalid email in DB", e);
         }
     }

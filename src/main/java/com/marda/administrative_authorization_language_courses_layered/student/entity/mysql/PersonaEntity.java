@@ -1,16 +1,24 @@
 package com.marda.administrative_authorization_language_courses_layered.student.entity.mysql;
 
 import com.marda.administrative_authorization_language_courses_layered.commons.entity.base.BaseEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.marda.administrative_authorization_language_courses_layered.commons.entity.constants.EntityConstants;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Comment;
 
 import java.time.LocalDate;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Comment(value = "Table register personal data of people")
+@Entity(name = "PersonaEntity")
+@Table(name = EntityConstants.PERSONA)
 public class PersonaEntity extends BaseEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "persona_id")
     private Long id;
 
