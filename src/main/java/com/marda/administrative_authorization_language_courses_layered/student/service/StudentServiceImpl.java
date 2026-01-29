@@ -3,6 +3,7 @@ package com.marda.administrative_authorization_language_courses_layered.student.
 import com.marda.administrative_authorization_language_courses_layered.commons.mapper.persona.PersonaMapper;
 import com.marda.administrative_authorization_language_courses_layered.commons.service.base.BaseServiceImpl;
 import com.marda.administrative_authorization_language_courses_layered.commons.service.exception.ServiceException;
+import com.marda.administrative_authorization_language_courses_layered.student.dto.repository.StudentLanguagesDTO;
 import com.marda.administrative_authorization_language_courses_layered.student.dto.request.StudentRequestDTO;
 import com.marda.administrative_authorization_language_courses_layered.student.dto.response.StudentResponseDTO;
 import com.marda.administrative_authorization_language_courses_layered.student.entity.mysql.PersonaEntity;
@@ -18,6 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import static java.util.Objects.isNull;
@@ -30,6 +32,7 @@ public class StudentServiceImpl extends BaseServiceImpl<StudentRequestDTO, Stude
     private final StudentMapper studentMapper;
 
     private static final String MSG_STUDENT_ERROR_REGISTER = "Error student register";
+    private static final String MSG_STUDENT_ERROR_RETRIEVING = "Error retrieving student languages";
 
     public StudentServiceImpl(
             StudentRepository studentRepository,
@@ -85,5 +88,15 @@ public class StudentServiceImpl extends BaseServiceImpl<StudentRequestDTO, Stude
     @Override
     public Boolean delete(StudentRequestDTO studentRequestDTO) throws ServiceException {
         return null;
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<StudentLanguagesDTO> findStudentLanguages() throws ServiceException {
+        try {
+            return studentRepository.findStudentLanguages();
+        } catch (Exception e) {
+            throw new StudentException(MSG_STUDENT_ERROR_RETRIEVING, e);
+        }
     }
 }

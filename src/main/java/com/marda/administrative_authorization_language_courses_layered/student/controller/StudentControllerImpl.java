@@ -2,6 +2,7 @@ package com.marda.administrative_authorization_language_courses_layered.student.
 
 import com.marda.administrative_authorization_language_courses_layered.commons.controller.base.BaseController;
 import com.marda.administrative_authorization_language_courses_layered.commons.service.exception.ServiceException;
+import com.marda.administrative_authorization_language_courses_layered.student.dto.repository.StudentLanguagesDTO;
 import com.marda.administrative_authorization_language_courses_layered.student.dto.request.StudentRequestDTO;
 import com.marda.administrative_authorization_language_courses_layered.student.dto.response.StudentResponseDTO;
 import com.marda.administrative_authorization_language_courses_layered.student.exception.StudentException;
@@ -9,6 +10,8 @@ import com.marda.administrative_authorization_language_courses_layered.student.s
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class StudentControllerImpl extends BaseController implements StudentController {
@@ -23,6 +26,15 @@ public class StudentControllerImpl extends BaseController implements StudentCont
     @Override
     public ResponseEntity<StudentResponseDTO> findById() throws StudentException {
         return null;
+    }
+
+    @Override
+    public ResponseEntity<List<StudentLanguagesDTO>> findStudentLanguages() throws StudentException {
+        try {
+            return ResponseEntity.ok(studentService.findStudentLanguages());
+        } catch (ServiceException e) {
+            throw new StudentException(e);
+        }
     }
 
     @Override
