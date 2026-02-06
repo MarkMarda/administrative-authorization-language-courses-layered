@@ -1,6 +1,6 @@
 package com.marda.administrative_authorization_language_courses_layered.student.controller;
 
-import com.marda.administrative_authorization_language_courses_layered.commons.controller.base.BaseController;
+import com.marda.administrative_authorization_language_courses_layered.base.controller.BaseController;
 import com.marda.administrative_authorization_language_courses_layered.commons.service.exception.ServiceException;
 import com.marda.administrative_authorization_language_courses_layered.student.dto.repository.StudentLanguagesDTO;
 import com.marda.administrative_authorization_language_courses_layered.student.dto.request.StudentRequestDTO;

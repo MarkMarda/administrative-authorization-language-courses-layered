@@ -1,6 +1,6 @@
 package com.marda.administrative_authorization_language_courses_layered.student.entity.mysql;
 
-import com.marda.administrative_authorization_language_courses_layered.commons.entity.base.BaseEntity;
+import com.marda.administrative_authorization_language_courses_layered.base.entity.BaseEntity;
 import com.marda.administrative_authorization_language_courses_layered.commons.entity.constants.EntityConstants;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

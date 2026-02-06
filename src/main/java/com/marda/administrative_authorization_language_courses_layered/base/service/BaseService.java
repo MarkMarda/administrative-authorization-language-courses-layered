@@ -1,4 +1,4 @@
-package com.marda.administrative_authorization_language_courses_layered.commons.service.base;
+package com.marda.administrative_authorization_language_courses_layered.base.service;
 
 import com.marda.administrative_authorization_language_courses_layered.commons.service.exception.ServiceException;
 import org.springframework.data.domain.Page;

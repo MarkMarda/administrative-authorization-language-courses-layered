@@ -1,4 +1,4 @@
-package com.marda.administrative_authorization_language_courses_layered.commons.controller.base;
+package com.marda.administrative_authorization_language_courses_layered.base.controller;
 
 import org.springframework.http.ResponseEntity;
 

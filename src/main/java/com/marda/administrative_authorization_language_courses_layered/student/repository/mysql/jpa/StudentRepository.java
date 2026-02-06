@@ -1,6 +1,6 @@
 package com.marda.administrative_authorization_language_courses_layered.student.repository.mysql.jpa;
 
-import com.marda.administrative_authorization_language_courses_layered.commons.repository.base.BaseRepository;
+import com.marda.administrative_authorization_language_courses_layered.base.repository.BaseRepository;
 import com.marda.administrative_authorization_language_courses_layered.student.dto.repository.StudentLanguagesDTO;
 import com.marda.administrative_authorization_language_courses_layered.student.entity.mysql.StudentEntity;
 import org.springframework.data.jpa.repository.Query;

@@ -1,4 +1,4 @@
-package com.marda.administrative_authorization_language_courses_layered.commons.entity.base;
+package com.marda.administrative_authorization_language_courses_layered.base.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;

@@ -1,7 +1,7 @@
 package com.marda.administrative_authorization_language_courses_layered.student.service;
 
 import com.marda.administrative_authorization_language_courses_layered.commons.mapper.persona.PersonaMapper;
-import com.marda.administrative_authorization_language_courses_layered.commons.service.base.BaseServiceImpl;
+import com.marda.administrative_authorization_language_courses_layered.base.service.BaseServiceImpl;
 import com.marda.administrative_authorization_language_courses_layered.commons.service.exception.ServiceException;
 import com.marda.administrative_authorization_language_courses_layered.student.dto.repository.StudentLanguagesDTO;
 import com.marda.administrative_authorization_language_courses_layered.student.dto.request.StudentRequestDTO;
@@ -17,7 +17,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
