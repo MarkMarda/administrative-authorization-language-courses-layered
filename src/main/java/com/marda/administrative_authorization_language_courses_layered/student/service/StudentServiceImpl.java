@@ -24,7 +24,7 @@ import java.util.Optional;
 import static java.util.Objects.isNull;
 
 @Service
-public class StudentServiceImpl extends BaseServiceImpl<StudentRequestDTO, StudentResponseDTO> implements StudentService {
+public class StudentServiceImpl implements StudentService {
     private final StudentRepository studentRepository;
 
     private final PersonaMapper personaMapper;
@@ -60,12 +60,6 @@ public class StudentServiceImpl extends BaseServiceImpl<StudentRequestDTO, Stude
         PersonaEntity personaEntity = personaMapper.toEntity(r.personalData());
         StudentEntity studentEntity = studentMapper.toEntity(r);
 
-        // Auditing
-        personaEntity.setAudRegisterDate(LocalDateTime.now());
-        personaEntity.setAudRegisterIdUser(1L);
-        personaEntity.setAudRegisterIp("127.0.0.1");
-        personaEntity.setState("1");
-
         studentEntity.setPersona(personaEntity);
         // Explicit creation of VO
         studentEntity.setEmail(Email.create(r.email()));
@@ -80,12 +74,12 @@ public class StudentServiceImpl extends BaseServiceImpl<StudentRequestDTO, Stude
     }
 
     @Override
-    public Boolean update(StudentRequestDTO studentRequestDTO) throws ServiceException {
+    public StudentResponseDTO update(Long id, StudentRequestDTO studentRequestDTO) throws ServiceException {
         return null;
     }
 
     @Override
-    public Boolean delete(StudentRequestDTO studentRequestDTO) throws ServiceException {
+    public Boolean delete(Long id) throws ServiceException {
         return null;
     }
 

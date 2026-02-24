@@ -24,7 +24,9 @@ import javax.sql.DataSource;
         transactionManagerRef = "mysqlTransactionManager",
         basePackages = {
                 "com.marda.administrative_authorization_language_courses_layered.commons.repository",
-                "com.marda.administrative_authorization_language_courses_layered.student.repository.mysql"
+                "com.marda.administrative_authorization_language_courses_layered.student.repository.mysql",
+                "com.marda.administrative_authorization_language_courses_layered.course.repository.mysql",
+
         }
 )
 public class MySQLDatasourceConfiguration {
@@ -53,7 +55,8 @@ public class MySQLDatasourceConfiguration {
         return builder
                 .dataSource(dataSource)
                 .packages(
-                        "com.marda.administrative_authorization_language_courses_layered.student.entity.mysql"
+                        "com.marda.administrative_authorization_language_courses_layered.student.entity.mysql",
+                        "com.marda.administrative_authorization_language_courses_layered.course.entity.mysql"
                 )
                 .persistenceUnit("mysql")
                 .build();

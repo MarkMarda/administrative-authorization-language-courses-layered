@@ -1,14 +1,12 @@
-package com.marda.administrative_authorization_language_courses_layered.commons.service.exception;
+package com.marda.administrative_authorization_language_courses_layered.course.exception;
 
-import java.security.PrivilegedActionException;
-
-public class ServiceException extends RuntimeException {
+public class CourseException extends RuntimeException {
     /**
      * Constructs a new runtime exception with {@code null} as its
      * detail message.  The cause is not initialized, and may subsequently be
      * initialized by a call to {@link #initCause}.
      */
-    public ServiceException() {
+    public CourseException() {
         super();
     }
 
@@ -20,7 +18,7 @@ public class ServiceException extends RuntimeException {
      * @param message the detail message. The detail message is saved for
      *                later retrieval by the {@link #getMessage()} method.
      */
-    public ServiceException(String message) {
+    public CourseException(String message) {
         super(message);
     }
 
@@ -38,7 +36,7 @@ public class ServiceException extends RuntimeException {
      *                unknown.)
      * @since 1.4
      */
-    public ServiceException(String message, Throwable cause) {
+    public CourseException(String message, Throwable cause) {
         super(message, cause);
     }
 
@@ -55,7 +53,7 @@ public class ServiceException extends RuntimeException {
      *              unknown.)
      * @since 1.4
      */
-    public ServiceException(Throwable cause) {
+    public CourseException(Throwable cause) {
         super(cause);
     }
 
@@ -73,7 +71,7 @@ public class ServiceException extends RuntimeException {
      *                           be writable
      * @since 1.7
      */
-    protected ServiceException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+    protected CourseException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 }

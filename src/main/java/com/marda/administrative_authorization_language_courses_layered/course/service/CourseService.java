@@ -1,0 +1,8 @@
+package com.marda.administrative_authorization_language_courses_layered.course.service;
+
+import com.marda.administrative_authorization_language_courses_layered.base.service.BaseService;
+import com.marda.administrative_authorization_language_courses_layered.course.dto.request.CourseRequestDTO;
+import com.marda.administrative_authorization_language_courses_layered.course.dto.response.CourseResponseDTO;
+
+public interface CourseService extends BaseService<CourseRequestDTO, CourseResponseDTO> {
+}
