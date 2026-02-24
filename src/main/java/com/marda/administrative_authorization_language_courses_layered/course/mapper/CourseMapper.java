@@ -1,0 +1,9 @@
+package com.marda.administrative_authorization_language_courses_layered.course.mapper;
+
+import com.marda.administrative_authorization_language_courses_layered.base.mapper.BaseMapper;
+import com.marda.administrative_authorization_language_courses_layered.course.dto.request.CourseRequestDTO;
+import com.marda.administrative_authorization_language_courses_layered.course.dto.response.CourseResponseDTO;
+import com.marda.administrative_authorization_language_courses_layered.course.entity.mysql.CourseEntity;
+
+public interface CourseMapper extends BaseMapper<CourseRequestDTO, CourseResponseDTO, CourseEntity> {
+}

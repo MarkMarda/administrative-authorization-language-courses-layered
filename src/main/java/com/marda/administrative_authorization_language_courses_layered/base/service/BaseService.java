@@ -13,7 +13,7 @@ public interface BaseService<T, R> {
 
     Long save(T r) throws ServiceException;
 
-    Boolean update(T t) throws ServiceException;
+    R update(Long id, T t) throws ServiceException;
 
-    Boolean delete(T t) throws ServiceException;
+    Boolean delete(Long id) throws ServiceException;
 }
